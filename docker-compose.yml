@@ -1,0 +1,11 @@
+services:
+  outlook-mail-pool-api:
+    build: .
+    container_name: outlook-mail-pool-api
+    env_file:
+      - .env
+    ports:
+      - "8098:8098"
+    volumes:
+      - ./data:/app/data
+    restart: unless-stopped
